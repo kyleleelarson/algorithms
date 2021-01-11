@@ -35,7 +35,7 @@ print("Sorted with insertion sort in %f seconds" % (endB-startB))
 
 print(listA == listB == listC)
 
-# built-in sort.() is 10x faster than my merge, and my merge is 100x faster than my insertion
+# built-in sort() is 10x faster than my merge, and my merge is 100x faster than my insertion
 # on arrays with 10000 elements
 # the performance gap between my merge and the built-in sort decreases with larger arrays
 # insertion sort faster than merge on sorted list
