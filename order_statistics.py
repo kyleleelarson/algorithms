@@ -7,8 +7,8 @@ def randomized_select(A,p,r,i):
 	# finds the i'th smallest element A between indices p and r
 	if p == r:
 		return A[p]
-	#q = randomized_partition(A,p,r)
-	q = partition(A,p,r)
+	q = randomized_partition(A,p,r)
+	#q = partition(A,p,r)
 	k = q-p+1
 	if i < k:
 		return randomized_select(A,p,q,i)
