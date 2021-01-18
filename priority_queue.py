@@ -17,7 +17,6 @@ class Priority_Queue:
 	def Heapify(self,i): 
 		# assumes binary trees rooted at Left(i) and Right(i) are heaps
 		# but that self.Heap[i] may be smaller than its children
-		# heap size n <= len[A]
 		l = self.Left(i)
 		r = self.Right(i)
 		largest = i
