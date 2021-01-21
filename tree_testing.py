@@ -13,6 +13,11 @@ end = time.time()
 print("populated list in %f seconds" % (end-start))
 
 start = time.time()
+B = {i for i in A}
+end = time.time()
+print("built set in %f seconds" % (end-start))
+
+start = time.time()
 T = Tree()
 for i in A:
 	T.Tree_Insert(Node(i))
@@ -31,8 +36,12 @@ x = random.randint(0,n)
 start = time.time()
 a = (x in A)
 end = time.time()
-print("")
-print("searched python list in %f seconds" % (end-start))
+print("\nsearched python list in %f seconds" % (end-start))
+
+start = time.time()
+d = (x in B)
+end = time.time()
+print("searched python set in %f seconds" % (end-start))
 
 start = time.time()
 b = (T.Tree_Search(T.Root,x) != None)
@@ -44,14 +53,13 @@ c = (T.Iterative_Tree_Search(T.Root,x) != None)
 end = time.time()
 print("searched binary search tree with loop in %f seconds" % (end-start))
 
-print("searches agree : %s" % (a == b == c))
+print("searches agree : %s" % (a == b == c == d))
 
 
 start = time.time()
 a = max(A)
 end = time.time()
-print("")
-print("found max in list in %f seconds" % (end-start))
+print("\nfound max in list in %f seconds" % (end-start))
 
 start = time.time()
 b = T.Tree_Maximum(T.Root).Key
