@@ -6,7 +6,7 @@ from weighted_graph import Vertex, Weighted_Graph
 def Dijkstra(G,s):
 	Initialize_Single_Source(G,s)
 	Q = []
-	for v in G.Vertices: # initialize Q
+	for v in G.Vertices:
 		Q.append(v)
 	while Q:
 		Q.sort(key=lambda x: x.Rank)
