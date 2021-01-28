@@ -27,7 +27,7 @@ def Random_Weighted_Graph(v,e,n):
 		
 		
 		
-G, root = Random_Weighted_Graph(100,1500,100)
+G, root = Random_Weighted_Graph(1000,1500,100)
 #G.Print_Graph()
 
 start = time.time()

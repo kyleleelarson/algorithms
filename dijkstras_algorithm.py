@@ -6,11 +6,14 @@ from weighted_graph import Vertex, Weighted_Graph
 def Dijkstra(G,s):
 	Initialize_Single_Source(G,s)
 	Q = []
-	for v in G.Vertices:
+	for v in G.Vertices: # initialize Q
 		Q.append(v)
 	while Q:
-		Q.sort(key=lambda x: x.Rank)
-		u = Q.pop(0)
+		min_index = 0
+		for i in range(len(Q)):
+			if Q[i].Rank < Q[min_index].Rank:
+				min_index = i
+		u = Q.pop(min_index)
 		for v in u.Edges:
 			Relax(u,v[0],v[1])
 	
