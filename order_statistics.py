@@ -10,8 +10,7 @@ def randomized_select(A,p,r,i):
 	q = randomized_partition(A,p,r)
 	#q = partition(A,p,r)
 	k = q-p+1
-	if i < k:
-		return randomized_select(A,p,q,i)
+	if i < k: return randomized_select(A,p,q,i)
 	else: return randomized_select(A,q+1,r,i-k)
 	
 	
@@ -27,18 +26,14 @@ def partition(A,p,r):
 		while A[i] < x:
 			i+=1
 		if i < j:
-			temp = A[i]
-			A[i] = A[j]
-			A[j] = temp
+			A[i], A[j] = A[j], A[i]
 			i+=1
 			j-=1
 		else: return j
 		
 def randomized_partition(A,p,r):
 	i = random.randint(p,r)
-	temp = A[i]
-	A[i] = A[p]
-	A[p] = temp
+	A[i], A[p] = A[p], A[i]
 	return partition(A,p,r)
 		
 		
